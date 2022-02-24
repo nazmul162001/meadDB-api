@@ -17,10 +17,20 @@ const searchFood = () => {
 
 const displaySearchResult = meals => {
   const searchResult = document.getElementById('search-result');
+  // clear search result 
+  // searchResult.innerHTML = '';
+  searchResult.textContent = '';
+
+  // if search result not fount / check condition 
+  if(meals.length == 0){
+    // Complete later 
+  }
+
+  // load data 
   meals.forEach(meal => {
     // console.log(meal);
     const div = document.createElement('div');
-    div.classList.add('col');
+    div.classList.add('col-lg-4', 'mb-5');
     div.innerHTML = `
     <div onclick="loadMealDetail(${meal.idMeal})" class="card">
         <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
@@ -56,8 +66,21 @@ const displayMealDetail = meal => {
   <div class="card-body">
     <h5 class="card-title">${meal.strMeal} </h5>
     <p class="card-text">${meal.strInstructions.slice(0, 150)}</p>
-    <a href="${meal.strYoutube}" class="btn btn-primary">Go somewhere</a>
+    <a href="${meal.strYoutube}" target="_blank" class="btn btn-primary">Go somewhere</a>
   </div>
   `;
   mealDetails.appendChild(div);
+}
+
+// preloader 
+// const loader = document.getElementById('preloader');
+// window.addEventListener('load', function(){
+//   loader.style.display = 'none'
+// })
+
+window.onload = function(){
+  setTimeout(function(){
+    const loader = document.getElementById('preloader');
+    loader.style.display = 'none';
+  },2000);
 }

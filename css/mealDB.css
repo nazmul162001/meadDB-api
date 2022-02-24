@@ -1,0 +1,120 @@
+body{
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image:url("/img/background.png");
+}
+#input-field{
+  border: 3px solid rgba(221, 24, 17, 0.733);
+  color: red;
+}
+.card{
+  border-radius: 15px;
+  transition: transform .2s ease-in-out;
+  width: 300px;
+}
+.card img{
+  border-radius: 15px;
+  width: 300px;
+  height: 300px;
+}
+.card:hover{
+  transform: scale(1.02);
+  transform: translateY(-20px);
+}
+
+/* preloader  */
+
+.container-preloader {
+  width: 100px;
+  height: 100px;
+  /* position: relative !important; */
+  animation: animate 1s linear infinite;
+  transform: rotate(45deg);
+  position: fixed;
+  z-index: 9999999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+span {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  animation: rotate 1s linear infinite
+}
+
+span:nth-child(1) {
+  top: 0;
+  left: 0;
+  background-color: #FCEBA7;
+}
+
+span:nth-child(2) {
+  top: 0;
+  right: 0;
+  background-color: #55DDB9;
+}
+
+span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  background-color: #FD6C64;
+}
+
+span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  background-color: #1F78B0;
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  10% {
+      transform: rotate(0deg);
+  }
+
+  50% {
+      transform: rotate(90deg);
+  }
+
+  90% {
+      transform: rotate(90deg);
+  }
+
+  100% {
+      transform: rotate(90deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+      width: 100px;
+      height: 100px;
+  }
+
+  10% {
+      width: 100px;
+      height: 100px;
+  }
+
+  50% {
+      width: 150px;
+      height: 150px;
+  }
+
+  90% {
+      width: 100px;
+      height: 100px;
+  }
+
+  100% {
+      width: 100px;
+      height: 100px;
+  }
+
+}
