@@ -2,6 +2,12 @@ const searchFood = () => {
   const searchField = document.getElementById('search-field');
   const searchText = searchField.value;
   // console.log(searchText);
+  const spinner = document.getElementById('preloader');
+  spinner.classList.remove('d-none');
+  const searchResult = document.getElementById('search-result');
+  // clear search result 
+  // searchResult.innerHTML = '';
+  searchResult.textContent = '';
 
   const url = `
   https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}
@@ -42,6 +48,8 @@ const displaySearchResult = meals => {
     `;
     searchResult.appendChild(div);
   })
+  const spinner = document.getElementById('preloader');
+  spinner.classList.add('d-none');
 }
 
 // get dynamic details
@@ -70,17 +78,4 @@ const displayMealDetail = meal => {
   </div>
   `;
   mealDetails.appendChild(div);
-}
-
-// preloader 
-// const loader = document.getElementById('preloader');
-// window.addEventListener('load', function(){
-//   loader.style.display = 'none'
-// })
-
-window.onload = function(){
-  setTimeout(function(){
-    const loader = document.getElementById('preloader');
-    loader.style.display = 'none';
-  },2000);
 }
